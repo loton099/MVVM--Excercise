@@ -21,7 +21,7 @@ enum Storyboards: String {
 }
 
 enum NibFiles: String {
-  case BannerCollectionViewCell
+  case UserListingTableViewCell
   
   
   var instance: UINib {

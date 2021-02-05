@@ -7,5 +7,7 @@
 */
 
 "ok" = "OK";
-"try_again" = "Please check your internet and try again";
+"try_again" = "Please try again after sometimes";
 "something_wrong" = "Something went wrong";
+"decoding_error" = "Decoding Error";
+"network_error" = "Network Error";

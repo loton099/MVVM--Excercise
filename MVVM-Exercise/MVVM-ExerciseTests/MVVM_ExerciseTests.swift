@@ -14,6 +14,7 @@ class MVVM_ExerciseTests: XCTestCase {
     var geo: Geo!
     var address: Address!
     var user: User!
+   
     
     
     override func setUpWithError() throws {
@@ -23,6 +24,7 @@ class MVVM_ExerciseTests: XCTestCase {
         geo = Geo(lat: "11.23", lng: "23.11")
         address = Address(street: "", suite: "999", city: "Cuttack", zipcode: "753004", geo: geo)
         user = User(id: 1 , name: "shakti", username: "shakti123", email: "shaktiprakash099@gmail.com", address: address, phone: "9040600856", website: "shaktipraksh099@gmail.com", company: company)
+      
     }
     
     override func tearDownWithError() throws {
@@ -31,6 +33,7 @@ class MVVM_ExerciseTests: XCTestCase {
         geo = nil
         address = nil
         user = nil
+     
     }
     
     //MARK: Model Test methods

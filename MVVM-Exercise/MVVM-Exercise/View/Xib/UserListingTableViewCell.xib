@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="UserListingTableViewCell" customModule="MVVM_Exercise" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shakti" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vv-o1-qEf">
+                        <rect key="frame" x="8" y="8" width="337" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9040600867" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnk-qh-97n">
+                        <rect key="frame" x="8" y="37" width="337" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robosoft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQ1-bx-mA7">
+                        <rect key="frame" x="8" y="80" width="337" height="13.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-mp-DYa">
+                        <rect key="frame" x="302" y="40" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="E8j-BI-SNn"/>
+                            <constraint firstAttribute="height" constant="35" id="bBm-Zs-b3h"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
+                        <state key="normal" image="face.smiling" catalog="system"/>
+                        <state key="selected" image="face.smiling.fill" catalog="system"/>
+                        <connections>
+                            <action selector="favouriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cGY-lO-Uec"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shakti.warrier@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQf-ey-8sS">
+                        <rect key="frame" x="8" y="63" width="337" height="14.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4Vv-o1-qEf" secondAttribute="trailing" constant="8" id="5KL-qH-I4h"/>
+                    <constraint firstItem="iQ1-bx-mA7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="6oe-bu-RAF"/>
+                    <constraint firstItem="4Vv-o1-qEf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BrX-cq-dBg"/>
+                    <constraint firstAttribute="trailing" secondItem="iQ1-bx-mA7" secondAttribute="trailing" constant="8" id="Cvb-hf-CeX"/>
+                    <constraint firstItem="4Vv-o1-qEf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="H0l-0v-OK6"/>
+                    <constraint firstAttribute="trailing" secondItem="rbT-mp-DYa" secondAttribute="trailing" constant="16" id="Pkw-vM-dGe"/>
+                    <constraint firstItem="fQf-ey-8sS" firstAttribute="top" secondItem="gnk-qh-97n" secondAttribute="bottom" constant="8" symbolic="YES" id="XsS-vc-YjL"/>
+                    <constraint firstItem="fQf-ey-8sS" firstAttribute="leading" secondItem="gnk-qh-97n" secondAttribute="leading" id="YE8-Lj-h8b"/>
+                    <constraint firstAttribute="trailing" secondItem="fQf-ey-8sS" secondAttribute="trailing" constant="8" id="a91-L1-xDi"/>
+                    <constraint firstAttribute="trailing" secondItem="gnk-qh-97n" secondAttribute="trailing" constant="8" id="cCr-BC-f7q"/>
+                    <constraint firstItem="gnk-qh-97n" firstAttribute="leading" secondItem="4Vv-o1-qEf" secondAttribute="leading" id="grW-No-cqN"/>
+                    <constraint firstItem="gnk-qh-97n" firstAttribute="top" secondItem="4Vv-o1-qEf" secondAttribute="bottom" constant="8" symbolic="YES" id="mwJ-Ug-B7Z"/>
+                    <constraint firstItem="iQ1-bx-mA7" firstAttribute="firstBaseline" secondItem="fQf-ey-8sS" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="scl-Bu-d06"/>
+                    <constraint firstItem="rbT-mp-DYa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tFL-qa-rhp"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iQ1-bx-mA7" secondAttribute="bottom" constant="8" id="wxO-Wt-e10"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="companyLabel" destination="iQ1-bx-mA7" id="Kng-Oq-mdJ"/>
+                <outlet property="favouriteButton" destination="rbT-mp-DYa" id="qXU-Z8-yir"/>
+                <outlet property="mobileNoLabel" destination="gnk-qh-97n" id="TpB-r8-lKY"/>
+                <outlet property="nameLabel" destination="4Vv-o1-qEf" id="QQU-pw-cqA"/>
+                <outlet property="websiteLabel" destination="fQf-ey-8sS" id="QY0-et-ZBj"/>
+            </connections>
+            <point key="canvasLocation" x="116.66666666666667" y="70.647321428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="face.smiling" catalog="system" width="128" height="121"/>
+        <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
