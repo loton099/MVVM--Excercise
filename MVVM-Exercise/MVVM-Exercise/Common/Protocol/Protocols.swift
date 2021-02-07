@@ -29,6 +29,7 @@ protocol Displayable {
     var userWebsite: String { get }
     var userCompany: String { get }
     var isfavourite: Bool { get set }
+    var userAddress: String { get }
 }
 
 extension Displayable {

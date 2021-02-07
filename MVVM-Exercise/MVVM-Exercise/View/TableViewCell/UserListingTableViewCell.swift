@@ -37,8 +37,10 @@ class UserListingTableViewCell: UITableViewCell {
         self.favouriteButton.isSelected = data.isfavourite ? true : false
     }
     
-    @IBAction func favouriteButtonTapped(_ sender: UIButton) {
-        
+    func updateFavourite(status: Bool, atIndex index: Int?) {
+        self.data?.isfavourite = status
+        self.favouriteButton.isSelected = status
     }
+    
     
 }

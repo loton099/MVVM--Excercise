@@ -58,6 +58,100 @@
             </objects>
             <point key="canvasLocation" x="928" y="44"/>
         </scene>
+        <!--User Details View Controller-->
+        <scene sceneID="nJU-WN-7wV">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailsViewController" id="YEz-6q-8a4" customClass="UserDetailsViewController" customModule="MVVM_Exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kwT-4P-Khz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shakti Prakash " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbL-d6-MS1">
+                                <rect key="frame" x="20" y="338" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="warrior" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzU-KI-RaZ">
+                                <rect key="frame" x="20" y="391.5" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuttack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0S-dw-qpv">
+                                <rect key="frame" x="177" y="438" width="60" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgJ-5A-wCb">
+                                <rect key="frame" x="20" y="507" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-PV-GGB">
+                                <rect key="frame" x="20" y="481" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQg-dI-fvN">
+                                <rect key="frame" x="184.5" y="589" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XeE-4T-luQ"/>
+                                    <constraint firstAttribute="width" constant="45" id="a0I-4z-biL"/>
+                                </constraints>
+                                <state key="normal" image="face.smiling" catalog="system"/>
+                                <state key="selected" image="face.smiling.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="favouriteButtonTapped:" destination="YEz-6q-8a4" eventType="touchUpInside" id="4ap-PH-93N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3d-eo-83p">
+                                <rect key="frame" x="20" y="548" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FeG-xR-6ke"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MgJ-5A-wCb" firstAttribute="leading" secondItem="FeG-xR-6ke" secondAttribute="leading" constant="20" id="4aQ-84-FYW"/>
+                            <constraint firstItem="L0S-dw-qpv" firstAttribute="top" secondItem="OzU-KI-RaZ" secondAttribute="bottom" constant="20" id="8xE-30-QLe"/>
+                            <constraint firstItem="HQg-dI-fvN" firstAttribute="top" secondItem="F3d-eo-83p" secondAttribute="bottom" constant="20" id="JGA-f6-c55"/>
+                            <constraint firstItem="FeG-xR-6ke" firstAttribute="trailing" secondItem="UbL-d6-MS1" secondAttribute="trailing" constant="20" id="QU6-gr-geO"/>
+                            <constraint firstItem="L0S-dw-qpv" firstAttribute="centerY" secondItem="kwT-4P-Khz" secondAttribute="centerY" id="QXD-Dn-eCR"/>
+                            <constraint firstItem="FeG-xR-6ke" firstAttribute="trailing" secondItem="OzU-KI-RaZ" secondAttribute="trailing" constant="20" id="SwF-xq-AXN"/>
+                            <constraint firstItem="FeG-xR-6ke" firstAttribute="trailing" secondItem="F3d-eo-83p" secondAttribute="trailing" constant="20" id="UzD-J3-2iC"/>
+                            <constraint firstItem="FeG-xR-6ke" firstAttribute="trailing" secondItem="9jX-PV-GGB" secondAttribute="trailing" constant="20" id="Vk3-n0-9qg"/>
+                            <constraint firstItem="F3d-eo-83p" firstAttribute="leading" secondItem="FeG-xR-6ke" secondAttribute="leading" constant="20" id="XA5-At-caT"/>
+                            <constraint firstItem="9jX-PV-GGB" firstAttribute="top" secondItem="L0S-dw-qpv" secondAttribute="bottom" constant="22.5" id="XCY-aK-zVr"/>
+                            <constraint firstItem="FeG-xR-6ke" firstAttribute="trailing" secondItem="MgJ-5A-wCb" secondAttribute="trailing" constant="20" id="bbR-7D-O1x"/>
+                            <constraint firstItem="UbL-d6-MS1" firstAttribute="leading" secondItem="FeG-xR-6ke" secondAttribute="leading" constant="20" id="beK-f8-lne"/>
+                            <constraint firstItem="OzU-KI-RaZ" firstAttribute="top" secondItem="UbL-d6-MS1" secondAttribute="bottom" constant="20" id="jt2-8A-eAf"/>
+                            <constraint firstItem="F3d-eo-83p" firstAttribute="top" secondItem="MgJ-5A-wCb" secondAttribute="bottom" constant="20" id="nUl-nx-aXq"/>
+                            <constraint firstItem="HQg-dI-fvN" firstAttribute="centerX" secondItem="kwT-4P-Khz" secondAttribute="centerX" id="qIi-FH-ElX"/>
+                            <constraint firstItem="MgJ-5A-wCb" firstAttribute="top" secondItem="9jX-PV-GGB" secondAttribute="bottom" constant="6.5" id="qOg-9f-ZH0"/>
+                            <constraint firstItem="9jX-PV-GGB" firstAttribute="leading" secondItem="FeG-xR-6ke" secondAttribute="leading" constant="20" id="vy2-I6-x8F"/>
+                            <constraint firstItem="OzU-KI-RaZ" firstAttribute="leading" secondItem="FeG-xR-6ke" secondAttribute="leading" constant="20" id="wMM-qO-K9q"/>
+                            <constraint firstItem="L0S-dw-qpv" firstAttribute="centerX" secondItem="kwT-4P-Khz" secondAttribute="centerX" id="xzn-kg-O5B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="L0S-dw-qpv" id="gCx-N9-DSa"/>
+                        <outlet property="comapanyLabel" destination="9jX-PV-GGB" id="6Lc-LF-Qod"/>
+                        <outlet property="favouriteButton" destination="HQg-dI-fvN" id="mqc-lw-Id3"/>
+                        <outlet property="fullNameLabel" destination="UbL-d6-MS1" id="8RK-UI-oKW"/>
+                        <outlet property="phoneNumberLabel" destination="MgJ-5A-wCb" id="jcA-dA-biE"/>
+                        <outlet property="userNameLabel" destination="OzU-KI-RaZ" id="9rf-lL-5iI"/>
+                        <outlet property="webSiteLabel" destination="F3d-eo-83p" id="VmM-eG-g4P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4k-5g-cpZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="44"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="MTo-SX-4H1">
             <objects>
@@ -78,6 +172,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="face.smiling" catalog="system" width="32" height="32"/>
+        <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

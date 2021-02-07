@@ -31,6 +31,7 @@
 		D6DB1B3525CC048A0085FBD9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1B3425CC048A0085FBD9 /* NetworkManager.swift */; };
 		D6DB1B3D25CC0C270085FBD9 /* Codable+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1B3C25CC0C270085FBD9 /* Codable+Additions.swift */; };
 		D6DB1B4325CC2AF60085FBD9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1B4225CC2AF60085FBD9 /* BaseViewController.swift */; };
+		D6F8015B25CD9E930072C2BC /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8015A25CD9E930072C2BC /* UserDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		D6DB1B3425CC048A0085FBD9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D6DB1B3C25CC0C270085FBD9 /* Codable+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Additions.swift"; sourceTree = "<group>"; };
 		D6DB1B4225CC2AF60085FBD9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D6F8015A25CD9E930072C2BC /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				D6BA059825CABFB800B66501 /* ViewController.swift */,
+				D6F8015A25CD9E930072C2BC /* UserDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				D6BA059925CABFB800B66501 /* ViewController.swift in Sources */,
 				D6DB1B4325CC2AF60085FBD9 /* BaseViewController.swift in Sources */,
 				D6BA05E425CAD87300B66501 /* StoryBoardManager.swift in Sources */,
+				D6F8015B25CD9E930072C2BC /* UserDetailsViewController.swift in Sources */,
 				D6BA059525CABFB800B66501 /* AppDelegate.swift in Sources */,
 				D6BA05F225CAD9B500B66501 /* UITableViewCell+Additions.swift in Sources */,
 				D6AEB4B125CD796A003F6B9C /* UserListingTableViewCell.swift in Sources */,

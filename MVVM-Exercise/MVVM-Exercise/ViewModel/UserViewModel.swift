@@ -25,6 +25,7 @@ class UserViewModel: BaseViewModel {
     func itemAt(_ index: Int) -> User {
         return self.users[index]
     }
+    
     func fetchUsersDetails() {
         self.requestStatusChanged?(true)
         NetworkFetcher().getUserDetails()
@@ -33,13 +34,13 @@ class UserViewModel: BaseViewModel {
                 guard let self = self else { return }
                 self.requestStatusChanged?(false)
                 switch completion {
-                    case .finished: debugPrint("Completion")
+                    case .finished:
+                        debugPrint("Completed")
                   
                 case .failure(let error ): debugPrint(" Error Occured \(error)")
                     self.requestEncounteredError?(error)
                 }
             } receiveValue: { [weak self] users in
-                debugPrint("Nodata")
                 guard let self = self else { return }
                 self.users = users
                 self.requestSucceeded?()
@@ -48,7 +49,14 @@ class UserViewModel: BaseViewModel {
     }
     
     
-        
+    // MARK: -
+      func updateUserFavouritesByReturningIndex(favouritesInfo: User) -> Int? {
+        if let index = self.users.firstIndex(where: { $0.id == favouritesInfo.id }) {
+          self.users[index].favouriteStatus = favouritesInfo.favouriteStatus
+          return index
+        }
+        return nil
+      }
     
     
 }

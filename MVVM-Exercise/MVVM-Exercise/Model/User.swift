@@ -53,6 +53,10 @@ struct Company: Codable {
 }
 
 extension User: Displayable {
+    var userAddress: String {
+        return "\(address?.street ?? SpacingConstants.emptyString ) , \(address?.city ??  SpacingConstants.emptyString)"
+    }
+    
     var userID: Int {
         return id
     }

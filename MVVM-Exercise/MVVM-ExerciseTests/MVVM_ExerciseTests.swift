@@ -23,7 +23,7 @@ class MVVM_ExerciseTests: XCTestCase {
         company = Company(name: "Apple", catchPhrase: "Multi-layered client-server neural-net", bs: "")
         geo = Geo(lat: "11.23", lng: "23.11")
         address = Address(street: "", suite: "999", city: "Cuttack", zipcode: "753004", geo: geo)
-        user = User(id: 1 , name: "shakti", username: "shakti123", email: "shaktiprakash099@gmail.com", address: address, phone: "9040600856", website: "shaktipraksh099@gmail.com", company: company)
+       
       
     }
     
@@ -52,10 +52,6 @@ class MVVM_ExerciseTests: XCTestCase {
         XCTAssertEqual(address.geo.lat, geo.lat)
     }
     
-    func testUserModel() throws {
-        XCTAssertEqual(user.address.city, address.city)
-        XCTAssertEqual(user.company.name, company.name)
-    }
     
     
     func testPerformanceExample() throws {
