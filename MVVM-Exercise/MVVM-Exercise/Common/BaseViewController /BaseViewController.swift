@@ -9,7 +9,9 @@ import UIKit
 
 
 class BaseViewController: UIViewController {
+    
     lazy var activityIndicator = UIActivityIndicatorView(style: .large)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          setupActivityIndicator()
@@ -58,7 +60,7 @@ class BaseViewController: UIViewController {
     }
     
     
-    
+    //MARK:- This method is used for showing error
     public func showAlertWith(error: Error?) {
       if error == nil {
         return

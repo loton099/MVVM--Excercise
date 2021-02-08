@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D61745D925D137750091A6D6 /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61745D825D137750091A6D6 /* UserViewModelTests.swift */; };
 		D638AF8C25CD910C00757969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638AF8B25CD910C00757969 /* Constants.swift */; };
 		D64B2DAC25CBB2AC0029F304 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D64B2DAB25CBB2AC0029F304 /* Localizable.strings */; };
 		D64B2DB125CBB3110029F304 /* Strings+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64B2DB025CBB3110029F304 /* Strings+Additions.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D61745D825D137750091A6D6 /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
 		D638AF8B25CD910C00757969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D64B2DAB25CBB2AC0029F304 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D64B2DB025CBB3110029F304 /* Strings+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Additions.swift"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				D6BA05AB25CABFBA00B66501 /* MVVM_ExerciseTests.swift */,
+				D61745D825D137750091A6D6 /* UserViewModelTests.swift */,
 				D6BA05AD25CABFBA00B66501 /* Info.plist */,
 			);
 			path = "MVVM-ExerciseTests";
@@ -481,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6BA05AC25CABFBA00B66501 /* MVVM_ExerciseTests.swift in Sources */,
+				D61745D925D137750091A6D6 /* UserViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

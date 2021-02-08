@@ -9,6 +9,7 @@ import UIKit
 
 class UserDetailsViewController: UIViewController {
     
+    //MARK:- IBoutLets
     @IBOutlet weak var comapanyLabel: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var webSiteLabel: UILabel!
@@ -17,6 +18,7 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
     
+    //MARK:- Properties
     var setfavouriteAction:((_ updatedData: Displayable)-> Void)?
     var userDetails: Displayable?
     
@@ -40,7 +42,7 @@ class UserDetailsViewController: UIViewController {
         self.favouriteButton.isSelected = userdetails.isfavourite
         
     }
-    
+    // MARK:- Favourite Tap Action
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
         self.favouriteButton.isSelected = !self.favouriteButton.isSelected
         self.userDetails?.isfavourite  = self.favouriteButton.isSelected

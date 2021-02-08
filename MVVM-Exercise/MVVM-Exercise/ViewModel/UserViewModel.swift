@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 class UserViewModel: BaseViewModel {
-   
+   //MARK: Properties
     var requestStatusChanged: ((_ inProgress: Bool) -> Void)?
     var requestSucceeded: (() -> Void)?
     var requestEncounteredError: ((_ error: MEError?) -> Void)?
     
     private var disposables = Set<AnyCancellable>()
-    
+    var networkfecher: NetworkFetchable
     private lazy var users : [User] = []
     
     var itemCount: Int  {
@@ -26,9 +26,14 @@ class UserViewModel: BaseViewModel {
         return self.users[index]
     }
     
+    init(apiService: NetworkFetchable = NetworkFetcher()) {
+        self.networkfecher = apiService
+    }
+    
+    //MARK: Methods
     func fetchUsersDetails() {
         self.requestStatusChanged?(true)
-        NetworkFetcher().getUserDetails()
+        self.networkfecher.getUserDetails()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard let self = self else { return }
@@ -49,7 +54,11 @@ class UserViewModel: BaseViewModel {
     }
     
     
-    // MARK: -
+    // MARK: - set favorite method
+
+    /// - Parameter favouritesInfo: This one is the  updated UserDeatils  which is yet to be  updated in the viewModel Details
+    /// - Returns: It return the index of the item so that it can changed in ViewController
+    
       func updateUserFavouritesByReturningIndex(favouritesInfo: User) -> Int? {
         if let index = self.users.firstIndex(where: { $0.id == favouritesInfo.id }) {
           self.users[index].favouriteStatus = favouritesInfo.favouriteStatus

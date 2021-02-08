@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - User
-struct User: Codable {
-    let id: Int
-    let name, username: String
-    let address: Address?
-    let phone, website: String
-    let company: Company?
+struct User {
+    var id: Int
+    var name, username: String
+    var address: Address?
+    var phone, website: String
+    var company: Company?
     var favouriteStatus: Bool = false
     
     enum CodingKeys: String, CodingKey {
@@ -24,6 +24,9 @@ struct User: Codable {
         case company
         case favouriteStatus
     }
+}
+
+extension User: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(Int.self, forKey: .id) ?? HeightConstants.annoymousID
@@ -90,4 +93,9 @@ extension User: Displayable {
     }
     
     
+}
+//MARK:- This static variables used for testing purposes
+extension User {
+   static let testUserOne = User(id: 1, name: "shakti", username: "shakti123", address: nil, phone: "9040600867", website: "erere.com", company: nil, favouriteStatus: true)
+    static let testUserTwo = User(id: 2, name: "praksh", username: "prakash", address: nil, phone: "7000210809", website: "erere.com", company: nil, favouriteStatus: true)
 }

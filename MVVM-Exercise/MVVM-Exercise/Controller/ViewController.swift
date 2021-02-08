@@ -47,7 +47,7 @@ class ViewController: BaseViewController {
     
 }
 
-
+//MARK: TableView Delegate / Datasource methods
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.itemCount
@@ -72,6 +72,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+//MARK: Detail Screen navigation methods
 extension ViewController {
     
     func showUserDetails(_ data: Displayable) {
