@@ -14,11 +14,11 @@ protocol NetworkFetchable {
 
 
 class NetworkFetcher {
-  private let session: URLSession
-  
-  init(session: URLSession = .shared) {
-    self.session = session
-  }
+    private let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
 }
 
 extension NetworkFetcher: NetworkFetchable {
@@ -34,34 +34,33 @@ extension NetworkFetcher: NetworkFetchable {
         }
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .mapError {  error in
-             MEError.decodingError()
+                MEError.decodingError()
             }
             .map(\.data)
             .flatMap { data in
-              decode(data)
+                decode(data)
             }
             .eraseToAnyPublisher()
-        }
-        
+    }
+    
 }
 
 
 
 // MARK: - JsonPlaceHolder  API
 private extension NetworkFetcher {
-  struct JsonPlaceHolderAPI {
-    static let scheme = "https"
-    static let host = "jsonplaceholder.typicode.com"
-    static let path = "/users"
-  }
-  
-  func makeJsonPlaceholderComponents()-> URLComponents {
-    var components = URLComponents()
-    components.scheme = JsonPlaceHolderAPI.scheme
-    components.host = JsonPlaceHolderAPI.host
-    components.path = JsonPlaceHolderAPI.path
+    struct JsonPlaceHolderAPI {
+        static let scheme = "https"
+        static let host = "jsonplaceholder.typicode.com"
+        static let path = "/users"
+    }
     
-    return components
-  }
-
+    func makeJsonPlaceholderComponents()-> URLComponents {
+        var components = URLComponents()
+        components.scheme = JsonPlaceHolderAPI.scheme
+        components.host = JsonPlaceHolderAPI.host
+        components.path = JsonPlaceHolderAPI.path
+        return components
+    }
+    
 }

@@ -14,18 +14,18 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         setupActivityIndicator()
-         setUpViewModelCallbacks()
+        setupActivityIndicator()
+        setUpViewModelCallbacks()
     }
     
     
     func startActivityIndicator() {
-       activityIndicator.startAnimating()
-     }
-     
-     func stopActivityIndicator() {
-       activityIndicator.stopAnimating()
-     }
+        activityIndicator.startAnimating()
+    }
+    
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
     
     
     
@@ -44,33 +44,33 @@ class BaseViewController: UIViewController {
     
     // MARK:   Must be overridden by subclasses to return a valid view model object.
     func viewModelObject() -> BaseViewModel? {
-      return nil
+        return nil
     }
     
     //  Must be overridden by subclasses for callback setup
     func setUpViewModelCallbacks() {
-      
-      self.viewModelObject()?.requestStatusChanged = { [weak self] inProgress in
-        inProgress ? self?.startActivityIndicator() : self?.stopActivityIndicator()
-      }
-      
-      self.viewModelObject()?.requestEncounteredError = { [weak self] error in
-        self?.showAlertWith(error: error)
-      }
+        
+        self.viewModelObject()?.requestStatusChanged = { [weak self] inProgress in
+            inProgress ? self?.startActivityIndicator() : self?.stopActivityIndicator()
+        }
+        
+        self.viewModelObject()?.requestEncounteredError = { [weak self] error in
+            self?.showAlertWith(error: error)
+        }
     }
     
     
     //MARK:- This method is used for showing error
     public func showAlertWith(error: Error?) {
-      if error == nil {
-        return
-      }
-      else if let e = error as? MEError {
-        AlertManager.showAlert(on: self, withTitle: e.title, message: e.localizedDescription)
-      }
-      else {
-        AlertManager.showAlert(on: self, withTitle: error?.localizedDescription ?? "", message: nil)
-      }
+        if error == nil {
+            return
+        }
+        else if let e = error as? MEError {
+            AlertManager.showAlert(on: self, withTitle: e.title, message: e.localizedDescription)
+        }
+        else {
+            AlertManager.showAlert(on: self, withTitle: error?.localizedDescription ?? "", message: nil)
+        }
     }
     
 }

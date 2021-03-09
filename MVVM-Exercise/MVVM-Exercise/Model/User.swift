@@ -64,7 +64,7 @@ extension User: Displayable {
         return id
     }
     var fullName: String {
-       return name
+        return name
     }
     
     var userName: String {
@@ -96,6 +96,6 @@ extension User: Displayable {
 }
 //MARK:- This static variables used for testing purposes
 extension User {
-   static let testUserOne = User(id: 1, name: "shakti", username: "shakti123", address: nil, phone: "9040600867", website: "erere.com", company: nil, favouriteStatus: true)
+    static let testUserOne = User(id: 1, name: "shakti", username: "shakti123", address: nil, phone: "9040600867", website: "erere.com", company: nil, favouriteStatus: true)
     static let testUserTwo = User(id: 2, name: "praksh", username: "prakash", address: nil, phone: "7000210809", website: "erere.com", company: nil, favouriteStatus: true)
 }
