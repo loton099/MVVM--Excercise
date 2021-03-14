@@ -42,7 +42,14 @@ class ViewController: BaseViewController {
             self.tableView.reloadData()
         }
         
-        
+        viewModel.requestfavouriteSuceeded = { [weak self] favouriteUser in
+            guard let self = self else { return }
+            if let index =  self.viewModel.updateUserFavouritesByReturningIndex(favouritesInfo:favouriteUser ) {
+                if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? UserListingTableViewCell {
+                    cell.updateFavourite(status: favouriteUser.isfavourite, atIndex: index)
+                }
+            }
+        }
     }
     
 }
@@ -55,6 +62,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: UserListingTableViewCell.identifier, for: indexPath) as? UserListingTableViewCell {
+            cell.delegate = self
             cell.configureData(self.viewModel.itemAt(indexPath.row))
             return cell
         }
@@ -70,6 +78,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+}
+
+extension ViewController: Tappable {
+    func favouriteRequestedof(data: Displayable) {
+        viewModel.performFavouriteWith(data: data as! User)
+    }
 }
 
 //MARK: Detail Screen navigation methods

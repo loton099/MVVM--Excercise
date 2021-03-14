@@ -7,20 +7,23 @@
 
 import Foundation
 import UIKit
-// MARK: - Protocol to handle common callbacks of view models
 
+//MARK: - Protocol to handle common callbacks of view models
 protocol BaseViewModel: class {
-    
     // Used to update the request started/ended status. can be usewd to update the activity indicator.
     var requestStatusChanged: ((_ inProgress: Bool) -> Void)? { get set }
-    
     // Used to inform about the error
     var requestEncounteredError: ((_ error: MEError?) -> Void)? { get set }
-    
 }
-
+//MARK: - FavouriteSetable protocol is used for setting user as favourite
+protocol FavouriteSetable {
+    func updateFavourite(status: Bool, atIndex index: Int?)
+}
+//MARK: - Tappable protocol is used for requesting favourite user
+protocol Tappable: class {
+    func favouriteRequestedof(data: Displayable)
+}
 //MARK: Displayable protocol is used to handle userData
-
 protocol Displayable {
     var userID: Int { get }
     var fullName: String { get }

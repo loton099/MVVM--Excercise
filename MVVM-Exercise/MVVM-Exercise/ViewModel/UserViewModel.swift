@@ -13,6 +13,7 @@ class UserViewModel: BaseViewModel {
     var requestStatusChanged: ((_ inProgress: Bool) -> Void)?
     var requestSucceeded: (() -> Void)?
     var requestEncounteredError: ((_ error: MEError?) -> Void)?
+    var requestfavouriteSuceeded:((_ updatedData: User)-> Void)?
     
     private var disposables = Set<AnyCancellable>()
     var networkfecher: NetworkFetchable
@@ -57,7 +58,8 @@ class UserViewModel: BaseViewModel {
     // MARK: - set favorite method
 
     /// - Parameter favouritesInfo: This one is the  updated UserDeatils  which is yet to be  updated in the viewModel Details
-    /// - Returns: It return the index of the item so that it can changed in ViewController
+    /// - Returns: It return the index of the item so that it can be  changed in ViewController
+    
     
       func updateUserFavouritesByReturningIndex(favouritesInfo: User) -> Int? {
         if let index = self.users.firstIndex(where: { $0.id == favouritesInfo.id }) {
@@ -67,6 +69,17 @@ class UserViewModel: BaseViewModel {
         return nil
       }
     
+    
+    
+    /// This  method used for performing Favourite call API For Time being we wil not  perform any actual Api will just change favourite staus of that particular object
+    /// - Parameter data: Data  is of type  User
+    func performFavouriteWith(data: User) {
+        // perform api call retrieve actual status
+        var favoriteUser = data
+        favoriteUser.favouriteStatus = !data.favouriteStatus
+        self.requestfavouriteSuceeded?(favoriteUser)
+        
+    }
     
 }
 
