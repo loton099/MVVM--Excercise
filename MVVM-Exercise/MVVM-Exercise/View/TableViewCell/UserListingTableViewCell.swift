@@ -16,6 +16,7 @@ class UserListingTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var data: Displayable?
+    weak var delegate: Tappable?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,9 @@ class UserListingTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func favouriteButtonDidTapAction(_ sender: UIButton) {
+        delegate?.favouriteRequestedof(data: data!)
     }
     
     //MARK: Data Configuration
@@ -40,7 +44,9 @@ class UserListingTableViewCell: UITableViewCell {
         self.websiteLabel.text = data.userWebsite
         self.favouriteButton.isSelected = data.isfavourite ? true : false
     }
-   
+}
+
+extension UserListingTableViewCell: FavouriteSetable {
     //MARK:- SET Favourite
     /// Description  Favourite status change method
     /// - Parameters:
@@ -50,6 +56,4 @@ class UserListingTableViewCell: UITableViewCell {
         self.data?.isfavourite = status
         self.favouriteButton.isSelected = status
     }
-    
-    
 }
