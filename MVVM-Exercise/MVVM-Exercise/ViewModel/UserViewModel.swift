@@ -34,24 +34,26 @@ class UserViewModel: BaseViewModel {
     //MARK: Methods
     func fetchUsersDetails() {
         self.requestStatusChanged?(true)
-        self.networkfecher.getUserDetails()
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                guard let self = self else { return }
-                self.requestStatusChanged?(false)
-                switch completion {
+        Task {
+          await self.networkfecher.getUserDetails()
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] completion in
+                    guard let self = self else { return }
+                    self.requestStatusChanged?(false)
+                    switch completion {
                     case .finished:
                         debugPrint("Completed")
-                  
-                case .failure(let error ): debugPrint(" Error Occured \(error)")
-                    self.requestEncounteredError?(error)
+                        
+                    case .failure(let error ): debugPrint(" Error Occured \(error)")
+                        self.requestEncounteredError?(error)
+                    }
+                } receiveValue: { [weak self] users in
+                    guard let self = self else { return }
+                    self.users = users
+                    self.requestSucceeded?()
                 }
-            } receiveValue: { [weak self] users in
-                guard let self = self else { return }
-                self.users = users
-                self.requestSucceeded?()
-            }
-            .store(in: &disposables)
+                .store(in: &disposables)
+        }
     }
     
     

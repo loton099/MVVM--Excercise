@@ -27,18 +27,19 @@ class UserViewModelTests: XCTestCase {
         super.tearDown()
       
        
-       
     }
     
-    func testMockServiceApi() {
+    func testMockServiceApi()  {
        
         let expectation = XCTestExpectation(description: "users")
-
-        mockApiService.getUserDetails().sink(receiveCompletion: { _ in }) { response in
-            XCTAssertTrue(!response.isEmpty)
-            XCTAssertEqual(response.count, 2)
-            expectation.fulfill()
-        }.store(in: &disposables)
+        Task {
+            await mockApiService.getUserDetails().sink(receiveCompletion: { _ in }) { response in
+                XCTAssertTrue(!response.isEmpty)
+                XCTAssertEqual(response.count, 2)
+                expectation.fulfill()
+            }.store(in: &disposables)
+            
+        }
         wait(for: [expectation], timeout: 1)
         
     }
@@ -74,7 +75,7 @@ class UserViewModelTests: XCTestCase {
 
 class MocknetworkFetcher: NetworkFetchable {
     
-    func getUserDetails() -> AnyPublisher<[User], MEError> {
+    func getUserDetails() async -> AnyPublisher<[User], MEError> {
         
         
         return Just([User.testUserOne,User.testUserTwo])

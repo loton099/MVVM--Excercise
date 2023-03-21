@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol NetworkFetchable {
-    func getUserDetails() -> AnyPublisher<[User],MEError>
+    func getUserDetails() async -> AnyPublisher<[User],MEError>
 }
 
 
@@ -22,7 +22,7 @@ class NetworkFetcher {
 }
 
 extension NetworkFetcher: NetworkFetchable {
-    func getUserDetails() -> AnyPublisher<[User],MEError> {
+    func getUserDetails() async -> AnyPublisher<[User],MEError> {
         return performNetworkCall(with: makeJsonPlaceholderComponents())
     }
     
